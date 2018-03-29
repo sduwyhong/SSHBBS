@@ -1,0 +1,275 @@
+/* header.jsp */
+		*{
+			text-align: center;
+		}
+		body{
+			background-color: #DCDCDC;
+		}
+		div,span{
+			margin: 0 auto;
+		}
+		input{
+			margin-bottom: 15px;
+		}
+		#header{
+			width: 100%;
+			height: 50px;
+			position:relative;
+			top:0;
+			background-color: #1E90FF
+		}
+		.header_content{
+			height:100%;
+			width:33%;
+			float: left;
+			color: #FDF5E6;
+		}
+		.header_content a,p{
+			margin-right:30px;
+			float: right;
+			color: #FDF5E6;
+		}
+		.header_content input,a,p{
+			margin-top: 15px;;
+		}
+		#bbs_pic{
+			font-size: 40px;
+		}
+		/* homepage.jsp */
+		#category{
+			width: 1200px;
+			height: 500px;
+			margin-top: 20px;
+		}
+		#add_category{
+			float: right;
+			width: 1000px;
+			font-size: 20px;
+		}
+		.category_content{
+			width: 30%;
+			height: 80%;
+			margin-left: 26px;
+			margin-top:10px;
+			float: left; 
+		}
+		.category_img,.category_img img{
+			width: 100%;
+			height: 80%;
+		}
+		.category_article_num{
+			width: 100%;
+			height: 20%;
+		}
+		/* 所有title */
+		.title{
+			width: 150px;
+			height: 30px;
+			font-size: 28px;
+			font-style:oblique;
+			color: #FDF5E6;
+			background-color:#1E90FF;
+			margin-top: 20px;
+			
+		}
+		/* footer.jsp */
+		#footer{
+			width: 100%;
+			height: 50px;
+			font-size: 28px;
+			background-color:#1E90FF;
+			margin-top: 20px;
+			bottom:0;  
+			overflow:hidden;
+		}
+		/* regist.jsp */
+		/* login.jsp */
+		/* add_category.jsp */		
+		/* edit_category.jsp */		
+		.form_div{
+			width: 500px;
+			margin-top: 20px;
+		}
+		#regist_form{
+			margin-left: 100px;
+		}
+		#regist_form input{
+			margin-top: 20px;
+		}
+		#login_form{
+			margin-left: 100px;
+		}
+		#login_form input{
+			margin-top: 20px;
+		}
+		#ac_form{
+			margin-left: 100px;
+		}
+		#ac_form input{
+			margin-top: 20px;
+		}
+		#ec_form{
+			margin-left: 100px;
+		}
+		#ec_form input{
+			margin-top: 20px;
+		}
+		#userInfo_div img{
+			width: 300px;
+		}
+		/* category.jsp */
+		#category_info{
+			width: 1000px;
+			height: 200px;
+			color: #FDF5E6;
+			margin-top: 30px;
+			font-size: 100px;
+		}
+		.category_info_img img{
+			float:left;
+			width:300px;
+			margin-left:150px;
+		}
+		.category_info_desc{
+			float:left;
+			width:39%;
+			height:100%;
+			color:#556B2F;
+			font-size:25px;
+		}
+		#category_operation{
+			float: right;
+			font-size: 20px;
+		}
+		#article_header{
+			width: 900px;
+			height: 30px;
+			margin-top: 30px;
+		}
+		#article_list{
+			border: 1px solid;
+			float: left;
+		}
+		#write_article{
+			float:left; 
+			height: 100%
+		}
+		#articles{
+			width: 1000px;
+			height: auto;
+			margin-top: 30px;
+		}
+		.article{
+			width: 900px;
+			height: 40px;
+			margin-top: 10px;
+			background-color: #FFEBCD;
+		}
+		.article_title{
+			margin-top:10px;
+			width: 60%;
+			height: 40px;
+			float: left;
+			font-size: 15px;
+		}
+		.article_user,.article_click_num,.article_review_num,.article_publish_time{
+			margin-top:10px;
+			width: 10%;
+			height: 40px;
+			float: left;
+			font-size: 15px;
+		}
+		.article_publish_time div{
+			width:100%;
+			color: black;
+			margin-top: -8px;
+			margin-left: -5px;
+		}
+		
+		/* article.jsp */
+		#article_content{
+			width: 1000px;
+			height: 500px;
+			margin-top: 30px;
+			border: none;
+		}
+		
+		.article_text{
+			width: auto;
+			height: 400px;
+			border: 1px solid #C0C0C0;
+			overflow: auto;
+		}
+		.article_text p,.review_text p{
+			color: #000000;
+			text-align: left;
+			float:left;
+			clear:both;
+			margin-left: 20px;
+			
+		}
+		.review_text{
+			width: 99%px;
+			height: 400px;
+			border: 1px solid #C0C0C0;
+			margin-top: 42px;
+			overflow: auto;
+		}
+		.article_review{
+			width: 1000px;
+			height: 500px;
+			margin-top: 30px;
+		}
+		.publisher_info{
+			float: left;
+			width:250px;
+			height: 450px;
+			border: 1px solid;
+			margin-top: 10px;
+			margin-left: 20px;
+			color: #008080;
+		}
+		.user_sculpture img{
+			width:100px;
+			margin-top: 50px;
+		}
+		.user_info{
+			width:200px;
+			height: 30%;
+			margin-top: 10px;
+		}
+		.article_content,.review_content{
+			float: left;
+			width:700px;
+			height: 450px;
+			margin-top: 10px;
+			margin-left: 20px;
+		}
+		.aticle_content_title{
+			border: 1px solid #DC143C;
+			margin-top: 30px;
+		}
+		.article_operation,.review_operation{
+			float: right;
+			width:30%;
+			height: 20px;
+			margin-right: -40px;
+		}
+		.floor{
+			width:700px;
+			height: 20px;
+			border: 1px solid #A9A9A9;
+			float:left;
+		}
+		.publish_time{
+			float: right;
+		}
+		.page{
+			clear: both;
+		}
+		/* writeArticle.jsp */
+		#ckeditor_div{
+			width: 1000px;
+			height: 500px;
+			margin-top: 20px;
+		}

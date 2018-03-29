@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<!-- 别忘了配置Struts2框架的核心控制器到web.xml中 -->
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- 更改错误消息，要把配置文件放在src目录下 -->
+	<constant name="struts.custom.i18n.resources" value="uploadError"></constant>
+	
+	<package name="userPackage" namespace="/user" extends="struts-default,json-default">
+		<action name="userAction_*" method="{1}" class="action.UserAction">
+			<interceptor-ref name="fileUpload">
+                <param name="allowedTypes">
+                    image/bmp,image/png,image/gif,image/jpeg,image/jpg
+                </param>
+                <param name="maximumSize">10485760</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+			<result name="login">/test_jsp/client/login.jsp</result>
+			<!-- <result name="regist" type="redirectAction">
+				<param name="actionName">userAction_registUI</param>
+			</result> -->
+			<!-- 跨包action请求 -->
+			<result name="homepage" type="redirectAction">
+				<param name="namespace">/category</param>
+				<param name="actionName">categoryAction_homepage</param>
+			</result>
+			<result name="setExc" type="redirectAction">
+				<param name="namespace">/article</param>
+				<param name="actionName">articleAction_showArticleDetail?id=${articleId}</param>
+			</result>
+			<result name="registUI">/test_jsp/client/regist.jsp</result>
+			<!-- 返回json类型数据 -->
+			<result name="jsonResult" type="json">
+				<!-- result是action中设置的变量名，也是页面需要返回的数据，该变量必须有setter和getter方法 -->
+                <param name="root">jsonResult</param>
+            </result>
+            <result name="editUI">/test_jsp/client/edit.jsp</result>
+            <result name="edit">/test_jsp/client/userInfo.jsp</result>
+		</action>
+	</package>
+	
+	<package name="categoryPackage" namespace="/category" extends="struts-default,json-default">
+		<action name="categoryAction_*" method="{1}" class="action.CategoryAction">
+			<interceptor-ref name="fileUpload">
+                <param name="allowedTypes">
+                    image/bmp,image/png,image/gif,image/jpeg,image/jpg
+                </param>
+                <param name="maximumSize">10485760</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+			<result name="homepage" type="redirectAction">categoryAction_homepage</result>
+			<result name="turnToHomepage">/test_jsp/client/homepage.jsp</result>
+			<result name="showArticleList">/test_jsp/client/category.jsp</result>
+			<result name="editUI">/test_jsp/client/edit_category.jsp</result>
+			<result name="edit" type="redirectAction">
+				<param name="actionName">categoryAction_showArticleList</param>
+			</result>
+			<!-- 
+			<result name="json" type="json">
+				<param name="root">list</param>
+			</result>
+			 -->
+		</action>
+	</package>
+	
+	<package name="articlePackage" namespace="/article" extends="struts-default">
+		<action name="articleAction_*" method="{1}" class="action.ArticleAction">
+			<interceptor-ref name="fileUpload">
+                <param name="allowedTypes">
+                    image/bmp,image/png,image/gif,image/jpeg,image/jpg
+                </param>
+                <param name="maximumSize">10485760</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+			<result name="homepage" type="redirectAction">
+				<param name="namespace">/category</param>
+				<param name="actionName">categoryAction_homepage</param>
+			</result>
+			<result name="writePage">/test_jsp/client/writeArticle.jsp</result>
+			<result name="publish" type="redirectAction">
+				<param name="namespace">/category</param>
+				<param name="actionName">categoryAction_showArticleList?id=${categoryId}</param>
+			</result>
+			<result name="login">/test_jsp/client/login.jsp</result>
+			<result name="showArticleDetail">/test_jsp/client/article.jsp</result>
+			<result name="delete" type="redirectAction">
+				<param name="namespace">/category</param>
+				<param name="actionName">categoryAction_showArticleList?id=${categoryId}</param>
+			</result>
+			<result name="edit" type="redirectAction">articleAction_showArticleDetail?id=${articleId}</result>
+			<result name="search">/test_jsp/client/searchResult.jsp</result>
+		</action>
+	</package>
+	
+	<package name="reviewPackage" namespace="/review" extends="struts-default">
+		<action name="reviewAction_*" method="{1}" class="action.ReviewAction">
+			<interceptor-ref name="fileUpload">
+                <param name="allowedTypes">
+                    image/bmp,image/png,image/gif,image/jpeg,image/jpg
+                </param>
+                <param name="maximumSize">10485760</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+            
+			<result name="login">/test_jsp/client/login.jsp</result>
+			<result name="publishReview" type="redirectAction">
+				<param name="namespace">/article</param>
+				<param name="actionName">articleAction_showArticleDetail?id=${articleId}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="namespace">/article</param>
+				<param name="actionName">articleAction_showArticleDetail?id=${articleId}</param>
+			</result>
+		</action>
+	</package>
+</struts>
